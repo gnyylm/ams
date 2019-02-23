@@ -1,0 +1,9 @@
+db.sqlite3
+dist
+.vscode
+node_modules
+gulpfile.js
+index.html
+manager.py
+package.json
+test.conf

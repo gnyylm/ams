@@ -1,0 +1,114 @@
+#mobile-nav-toggle {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    margin: 20px 20px 0 0;
+    border: 0;
+    background: none;
+    font-size: 24px;
+    display: none;
+    transition: all 0.4s;
+    outline: none;
+    cursor: pointer;
+    i {
+        color: #555;
+    }
+}
+
+#mobile-nav {
+    position: fixed;
+    top: 0;
+    padding-top: 18px;
+    bottom: 0;
+    z-index: 998;
+    background: rgba(52, 59, 64, 0.9);
+    left: -260px;
+    width: 260px;
+    overflow-y: auto;
+    transition: 0.4s;
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+            position: relative;
+            a {
+                color: @beyaz;
+                font-size: 16px;
+                overflow: hidden;
+                padding: 10px 22px 10px 15px;
+                position: relative;
+                text-decoration: none;
+                width: 100%;
+                display: block;
+                outline: none;
+                &:hover {
+                    color: @beyaz;
+                }
+            }
+            li {
+                padding-left: 30px;
+            }
+        }
+    }
+    .social-links {
+        float: none;
+        li {
+            float: left;
+            width: 50%;
+            
+        }
+        
+    }
+}
+
+.nav {
+    ul{
+        li {
+            width: 100%;
+        }
+    }
+}
+
+#mobile-nav ul .menu-has-children i {
+    position: absolute;
+    right: 0;
+    z-index: 99;
+    padding: 15px;
+    cursor: pointer;
+    color: @beyaz;
+}
+
+#mobile-nav ul .menu-has-children i.fa-chevron-up {
+    color: @link1;
+}
+
+#mobile-nav ul .menu-item-active {
+    color: @link1;
+}
+
+#mobile-body-overly {
+    width: 100%;
+    height: 100%;
+    z-index: 997;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: rgba(52, 59, 64, 0.9);
+    display: none;
+}
+
+/* Mobile Nav body classes */
+
+body.mobile-nav-active {
+    overflow: hidden;
+}
+
+body.mobile-nav-active #mobile-nav {
+    left: 0;
+}
+
+body.mobile-nav-active #mobile-nav-toggle {
+    color: @beyaz;
+}

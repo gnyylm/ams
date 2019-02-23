@@ -1,0 +1,5 @@
+{% load temsilci %}
+{% temsilciler  as temsil %}
+{% for tm in temsil%}
+<li><a href="{% url 'temsilciler'%}">{{tm.adi}} {{tm.soyadi}}</a></li>
+{%endfor%}

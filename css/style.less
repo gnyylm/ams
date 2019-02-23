@@ -1,0 +1,283 @@
+@import "degisken.less";
+body {
+    background-color: @beyaz;
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: @link1;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: @link1;
+    outline: none;
+    text-decoration: none;
+}
+
+p {
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.top-nav-collapse {
+    background-color: @renk1  !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+    background: transparent !important;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    background: @link1;
+    color: @beyaz;
+    padding: 6px 12px 9px 12px;
+    font-size: 16px;
+    border-radius: 2px;
+    right: 10px;
+    bottom: 10px;
+    transition: background 0.5s;
+}
+
+.back-to-top:focus {
+    background: @renk1;
+    color: @beyaz;
+    outline: none;
+}
+
+.back-to-top:hover {
+    background: #0c2e8a;
+    color: @beyaz;
+}
+
+#topbar {
+    background: @renk1;
+    padding: 10px 0;
+    border-bottom: 1px solid @link1;
+    font-size: 14px;
+    .contact-info {
+        a {
+            line-height: 1;
+            color: #555;
+            &:hover {
+                color: @link1;
+            }
+        }
+        i {
+            color: @link1;
+            padding: 4px;
+        }
+        .fa-phone {
+            padding-left: 20px;
+            margin-left: 20px;
+            border-left: 1px solid #e9e9e9;
+        }
+    }
+    .social-links {
+        float: right;
+        a {
+            color: #555;
+            padding: 4px 12px;
+            display: inline-block;
+            line-height: 1px;
+            border-left: 1px solid #e9e9e9;
+            &:hover {
+                color: @link1;
+            }
+            &:first-child {
+                border-left: 0;
+            }
+        }
+    }
+}
+
+#header {
+    padding: 20px 0;
+    height: 84px;
+    transition: all 0.5s;
+    z-index: 997;
+    background: @renk1;
+    box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.06);
+}
+
+#header #logo h1 {
+    font-size: 42px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+#header #logo h1 a {
+    color: #0c2e8a;
+    line-height: 1;
+    display: inline-block;
+}
+
+#header #logo h1 a span {
+    color: @link1;
+}
+
+#header img {
+    padding: 0;
+    margin: 0;
+    height: 3rem;
+}
+
+#intro {
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    background: url("../img/intro-carousel/1.jpg") no-repeat;
+    background-size: cover;
+}
+
+#intro .intro-content {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+}
+
+#intro .intro-content h2 {
+    color: #0c2e8a;
+    margin-bottom: 30px;
+    font-size: 64px;
+    font-weight: 700;
+}
+
+#intro .intro-content h2 span {
+    color: @link1;
+    text-decoration: underline;
+}
+
+#intro .intro-content .btn-get-started,
+#intro .intro-content .btn-projects {
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 32px;
+    border-radius: 2px;
+    transition: 0.5s;
+    margin: 10px;
+    color: @beyaz;
+}
+
+#intro .intro-content .btn-get-started {
+    background: #0c2e8a;
+    border: 2px solid #0c2e8a;
+}
+
+#intro .intro-content .btn-get-started:hover {
+    background: none;
+    color: #0c2e8a;
+}
+
+#intro .intro-content .btn-projects {
+    background: @link1;
+    border: 2px solid @link1;
+}
+
+#intro .intro-content .btn-projects:hover {
+    background: none;
+    color: @link1;
+}
+
+#intro #intro-carousel {
+    z-index: 8;
+}
+
+#intro #intro-carousel::before {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 7;
+}
+
+#intro #intro-carousel .item {
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*transition-property: opacity;*/
+}
+
+.card {
+    .card-header {
+        background-color: transparent;
+    }
+    .nav-tabs {
+        margin: -1px;
+    }
+    
+}
+ul.sponsor {
+    list-style: none;
+    padding: 0px;
+    li {
+        list-style: none;
+        margin: 0px;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@import "nav.less";
+@import "side_menu.less";
+@import "section.less";
+@import "mobil.less";
+/*@import "services.less";*/
+
+/*@import "clients.less";*/
+
+@import "port.less";
+@import "trans.less";
+@import "team.less";
+@import "kurallar.less";
+@import "footer.less";
+@import "media.less";

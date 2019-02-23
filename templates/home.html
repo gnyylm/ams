@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Anasayfa - {{ block.super }}
+{% endblock %}
+{% block body %}
+{% load ust_menu %}
+{% load temsilci %}
+{% temsilciler  as temsil %}
+{% sponsors as sponsor %}
+<section id="intro">
+    <div class="intro-content">
+        <h2>2019 Sezonunda Sizde Yeriniz Alın..</h2>
+        <div>
+            <a href="{% url 'kurallar'%}" class="btn-get-started scrollto">Kurallar</a>
+            <a href="{% url 'temsilciler'%}" class="btn-projects scrollto">Temsilciler</a>
+        </div>
+    </div>
+    <div id="intro-carousel" class="owl-carousel">
+        <div class="item" style="background-image: url('{% static 'img/bg/1.jpg' %}');"></div>
+        <div class="item" style="background-image: url('{% static 'img/bg/2.jpg' %}');"></div>
+        <div class="item" style="background-image: url('{% static 'img/bg/3.jpg' %}');"></div>
+        <div class="item" style="background-image: url('{% static 'img/bg/2.jpg' %}');"></div>
+        <div class="item" style="background-image: url('{% static 'img/bg/3.jpg' %}');"></div>
+    </div>
+</section>
+<main id="main">
+    <section id="temsilci" class="wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2>Temsilciler</h2>
+            </div>
+            <div class="row">
+                {% for tm in temsil %}
+                <div class="col-lg-3 col-md-6">
+                    <div class="member">
+                        <div class="pic"><img src="{% static 'none-avatar.jpg' %}" alt=""></div>
+                        <div class="details">
+                            <h4>{{tm.adi}} {{tm.soyadi}}</h4>
+                            <span>{{tm.il}} temsilcisi</span>
+                            <span>{{tm.mobil}}</span>
+                            <div class="social">
+                                <a href=""><i class="fa fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+    </section>
+    <section id="portfolio" class="wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2>Galeri</h2>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col-lg-3 col-md-4">
+                    <div class="portfolio-item wow fadeInUp">
+                        <a href="{% static 'img/portfolio/1.jpg' %}" class="portfolio-popup">
+                            <img src="{% static 'img/portfolio/1.jpg' %}" alt="">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h2 class="wow fadeInUp">Portfolio Item 1</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="portfolio-item wow fadeInUp">
+                        <a href="{% static 'img/portfolio/2.jpg' %}" class="portfolio-popup">
+                            <img src="{% static 'img/portfolio/2.jpg' %}" alt="">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h2 class="wow fadeInUp">Portfolio Item 2</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="portfolio-item wow fadeInUp">
+                        <a href="{% static 'img/portfolio/3.jpg' %}" class="portfolio-popup">
+                            <img src="{% static 'img/portfolio/3.jpg' %}" alt="">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h2 class="wow fadeInUp">Portfolio Item 3</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="portfolio-item wow fadeInUp">
+                        <a href="{% static 'img/portfolio/4.jpg' %}" class="portfolio-popup">
+                            <img src="{% static 'img/portfolio/4.jpg' %}" alt="">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h2 class="wow fadeInUp">Portfolio Item 4</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="portfolio-item wow fadeInUp">
+                        <a href="{% static 'img/portfolio/5.jpg' %}" class="portfolio-popup">
+                            <img src="{% static 'img/portfolio/5.jpg' %}" alt="">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h2 class="wow fadeInUp">Portfolio Item 5</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="portfolio-item wow fadeInUp">
+                        <a href="{% static 'img/portfolio/6.jpg' %}" class="portfolio-popup">
+                            <img src="{% static 'img/portfolio/6.jpg' %}" alt="">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h2 class="wow fadeInUp">Portfolio Item 6</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="portfolio-item wow fadeInUp">
+                        <a href="{% static 'img/portfolio/7.jpg' %}" class="portfolio-popup">
+                            <img src="{% static 'img/portfolio/7.jpg' %}" alt="">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h2 class="wow fadeInUp">Portfolio Item 7</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="portfolio-item wow fadeInUp">
+                        <a href="{% static 'img/portfolio/8.jpg' %}" class="portfolio-popup">
+                            <img src="{% static 'img/portfolio/8.jpg' %}" alt="">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h2 class="wow fadeInUp">Portfolio Item 8</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="clients" class="wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sponsorlar</h2>
+            </div>
+            <div class="owl-carousel clients-carousel">
+                {% for sp in sponsor%}
+                <img src="{{sp.logo.url}}" alt="{{sp.sponsor}}">
+                {%endfor%}
+            </div>
+
+        </div>
+    </section>
+</main>
+{% endblock %}
