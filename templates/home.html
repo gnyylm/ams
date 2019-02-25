@@ -283,7 +283,7 @@ Anasayfa - {{ block.super }}
                             var map;
                             function initialize() {
 
-                                var center = new google.maps.LatLng(51.97559, 4.12565);
+                                var center = new google.maps.LatLng({{konum}});
                                 map = new google.maps.Map(document.getElementById('map-view'), {
                                     center: center,
                                     zoom: 5,
@@ -292,7 +292,7 @@ Anasayfa - {{ block.super }}
                                 var bounds = new google.maps.LatLngBounds();
                                 for (var i = 0; i < markers.length; i++) {
                                     var data = markers[i]
-                                    var startPt = new google.maps.LatLng(36.499507, 36.362544);
+                                    var startPt = new google.maps.LatLng({{konum}});
                                     var endPt = new google.maps.LatLng(data.lat, data.lng);
                                     calcRoute(startPt, endPt);
                                     bounds.extend(startPt);
