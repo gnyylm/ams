@@ -249,12 +249,50 @@ h6 {
 .card {
     .card-header {
         background-color: transparent;
+        padding-left: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
     .nav-tabs {
         margin: -1px;
     }
-    
 }
+
+section {
+    .card {
+        .card-header {
+            background-color: transparent;
+            padding: 0px;
+            span.badge {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                color: @beyaz;
+                background-color: @link1;
+                border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+            p {
+                text-align: center;
+                margin: 0px;
+                color: #444;
+                font-weight: bold;
+            }
+            
+        }
+        table {
+            td,th {
+                padding: .5rem !important;
+            }
+        }
+        i{
+            color: @link1;
+            font-size: 20px;
+        }
+    }
+}
+
 ul.sponsor {
     list-style: none;
     padding: 0px;
@@ -271,10 +309,6 @@ ul.sponsor {
 @import "side_menu.less";
 @import "section.less";
 @import "mobil.less";
-/*@import "services.less";*/
-
-/*@import "clients.less";*/
-
 @import "port.less";
 @import "trans.less";
 @import "team.less";

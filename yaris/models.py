@@ -74,7 +74,10 @@ class katilimci(models.Model):
         verbose_name_plural = 'Katılımcılar'
 
     def __str__(self):
-        return self.username
+        if self.username:
+            return self.username
+        else:
+            return self.name+" "+ self.lastname
     def get_name(self):
         if self.username:
             return self.username
@@ -186,7 +189,7 @@ def logos(instance,filename):
     if instance.id:
         return "sponsors/%s.%s" %(instance.id,extension)
     else:
-        return "sponsors/" %(filename)
+        return "sponsors/%s" %(filename)
 class sponsorlar(models.Model):
     sponsor = models.CharField(max_length=120,verbose_name="Sponsor")
     logo = models.ImageField(upload_to=logos)

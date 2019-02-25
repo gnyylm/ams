@@ -3,25 +3,24 @@
 {% if queries%}
 <li class="dropdown"><a href="#" data-toggle="dropdown">Yarışlar</a>
     <ul class="dropdown-menu">
-            {% for query in queries %}
-            {%races query.id as rc%}
-            {% if query%}
-            <li><a class="dropdown-item" href="{% url 'race_sezon' szn=query.title  %}">{{query.title}}</a>
-                <ul class="dropdown-menu sub-menu">
-                        <li><a class="dropdown-item" href="{% url 'race_sezon' szn=query.title  %}">Yarışlar</a>
-                            <ul class="dropdown-menu sub-menu">
-                                {% for yc in rc %}
-                                <li><a class="dropdown-item" href="{% url 'race' slug=yc.sezon id=yc.slug  %}">{{yc.adi}}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </li>
+        {% for query in queries %}
+        {%races query.id as rc%}
+        {% if query%}
+        <li><a href="#">{{query.title}}</a>
+            <ul class="dropdown-menu sub-menu">
+                <li><a href="#">Yarışlar</a>
+                    <ul class="dropdown-menu sub-menu">
+                        {% for yc in rc %}
+                        <li><a href="{% url 'race' slug=yc.sezon id=yc.slug  %}">{{yc.adi}}</a></li>
+                        {% endfor %}
                     </ul>
                 </li>
-            {% else %}
-            <li><a class="dropdown-item" href="#">{{query.title}}</a></li>
-            {%endif%}
-            
-            {% endfor %}
+            </ul>
+        </li>
+        {% else %}
+        <li><a class="dropdown-item" href="#">{{query.title}}</a></li>
+        {%endif%}
+        {% endfor %}
     </ul>
 </li>
 {% else %}

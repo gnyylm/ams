@@ -1,4 +1,7 @@
 from django.shortcuts import render
-
+from django.conf import settings
 def index(request):
-    return render(request, 'iletisim/index.html')
+    context = {
+        "konum" : settings.LAT_LNG
+    }
+    return render(request, 'iletisim/index.html' ,context)

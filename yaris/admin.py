@@ -6,11 +6,13 @@ from .models import yaris,oduller,ulkeler,iller,temsilci,kurallar,sponsorlar
 
 class AdmUlke(admin.ModelAdmin):
     list_display = ['ulke']
+    prepopulated_fields = {"slug": ("ulke",)}
 
 admin.site.register(ulkeler, AdmUlke)
 
 class Admiil(admin.ModelAdmin):
     list_display = ['il']
+    prepopulated_fields = {"slug": ("il",)}
 
 admin.site.register(iller, Admiil)
 

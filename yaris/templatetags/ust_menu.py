@@ -10,7 +10,7 @@ def jump_link():
         return sz
 @register.simple_tag
 def races(sezon):
-    sz = yaris.objects.all().filter(sezon=sezon)
+    sz = yaris.objects.all().filter(sezon=sezon).order_by('mesafe')
     if sz:
         return sz
 @register.simple_tag

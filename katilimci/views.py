@@ -5,13 +5,16 @@ def index(request):
     if request.GET.get('s'):
         yil = request.GET.get('s')
         sz = sezon.objects.all().order_by("-start_date")
-        kt = katilimci.objects.all().filter(sezon__start_date__year=yil)
+        kt = katilimci.objects.all().filter(sezon__title=yil)
     else:
         sz = sezon.objects.all().order_by("-start_date")
-        kt = get_object_or_404(katilimci,sezon=sz[0].id)
-        print(dir(kt))
+        if sz:
+            kt = katilimci.objects.all().filter(sezon__title=sz[0])
+        else:
+            kt = 0
+    print(dir(kt))
     content = {
-        "title":"Katılımcılar",
+        "title": sz[0],
         "sezon" : sz,
         "kt": kt
     }

@@ -32,7 +32,7 @@
         margin: 0;
         list-style: none;
         li {
-            position: relative;
+            
             a {
                 color: @beyaz;
                 font-size: 16px;
@@ -44,12 +44,39 @@
                 display: block;
                 outline: none;
                 &:hover {
-                    color: @beyaz;
+                    color: @link1;
                 }
             }
-            li {
-                padding-left: 30px;
+            ul{
+                width: 100%;
+                position: relative !important;
+                transform: translate3d(0px, 0px, 0px) !important;
+                li {
+                    background-color: rgba(52, 59, 64, 0.9);
+                    color: @beyaz;
+                    &:hover{
+                        ul {
+                            visibility: visible;
+                            display: block;
+                        }
+                    }
+                    ul{
+                        position: relative !important;
+                        visibility: hidden;
+                        display: none;
+                        top: 0px;
+                        left: 0px;
+                        padding: 0px;
+                        li{
+                            padding: 0px;
+                            color: @beyaz;
+                        }
+                    }
+                }
             }
+        }
+        .dropdown-item {
+            background-color: @beyaz;
         }
     }
     .social-links {

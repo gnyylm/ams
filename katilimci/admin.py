@@ -14,7 +14,7 @@ class LigAdmin(admin.ModelAdmin):
     def category_post_count(self, obj):
         return obj.fanchers.count()
     category_post_count.short_description = "Kayıtlı Kuşu"
-    list_display = ['username','name','lastname','mobile','category_post_count']
+    list_display = ['name','lastname','mobile','category_post_count']
     list_filter = ['il']
     inlines = [pigeonInline]
 admin.site.register(katilimci, LigAdmin)

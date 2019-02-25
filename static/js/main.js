@@ -44,10 +44,8 @@ jQuery(document).ready(function ($) {
     var $mobile_nav = $('#nav-menu-container').clone().prop({
       id: 'mobile-nav'
     });
-    $mobile_nav.find('> ul').attr({
-      'class': '',
-      'id': ''
-    });
+
+    $mobile_nav.find('> ul').removeClass("nav-menu");
     var $user_login = $('.social-links').clone();
 
     $('body').append($mobile_nav);
@@ -197,11 +195,17 @@ jQuery(document).ready(function ($) {
     }
   });
   $("a[href='#guzargah']").on('shown.bs.tab', function (e) {
-    var center = map.getCenter();
-    google.maps.event.trigger(map, 'resize');
-    map.setCenter(center);
-    map.setZoom(7)
-    
+    try {
+      var center = map.getCenter();
+      google.maps.event.trigger(map, 'resize');
+      map.setCenter(center);
+      map.setZoom(7)
+    } catch (e) {
+      if (e instanceof ReferenceError) {
+        console.log(e)
+      }
+    }
+
   });
 
 });
