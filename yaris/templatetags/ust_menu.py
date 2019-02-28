@@ -26,3 +26,9 @@ def maps(sezon):
                 for rc in sz:
                         liste.append({'yaris': rc.adi,'lat': str(rc.lat),'lng':str(rc.lng)})
                 return json.dumps(liste)
+
+@register.simple_tag
+def map2(race):
+        rc = yaris.objects.get(pk=race)
+        if rc:
+                return([{'yaris': rc.adi,'lat': str(rc.lat),'lng':str(rc.lng)}])
