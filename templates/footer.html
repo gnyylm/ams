@@ -1,4 +1,4 @@
-<footer id="footer">
+{% load ust_menu %}<footer id="footer">
     <div class="ft1">
         <div class="container">
             <div class="row">
@@ -18,13 +18,13 @@
                         <h3>İletişim</h3>
                         <ul>
                             <li><i class="fa fa-map-marker"></i>
-                                <p><strong>Adres :</strong></p>
+                                <p><strong>Adres :</strong>{%ayar 'ADRES' %}</p>
                             </li>
                             <li><i class="fa fa fa-phone"></i>
-                                <p><strong>Telefon :</strong>  +90 553 898 34 31 </p>
+                                <p><strong>Telefon :</strong>  {% ayar 'TEL'%} </p>
                             </li>
                             <li><i class="fa fa fa-envelope"></i>
-                                <p><strong>Eposta :</strong></p>
+                                <p><strong>Eposta : {%ayar 'POSTA' %}</strong></p>
                             </li>
                         </ul>
                     </div>

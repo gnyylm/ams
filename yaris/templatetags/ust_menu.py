@@ -1,4 +1,5 @@
 from django import template
+from django.conf import settings
 from yaris.models import sezon,yaris,sponsorlar
 import json
 register = template.Library()
@@ -32,3 +33,7 @@ def map2(race):
         rc = yaris.objects.get(pk=race)
         if rc:
                 return([{'yaris': rc.adi,'lat': str(rc.lat),'lng':str(rc.lng)}])
+
+@register.simple_tag
+def ayar(name):
+    return getattr(settings, name, "")

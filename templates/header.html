@@ -1,9 +1,10 @@
 {% load static %}
+{% load ust_menu %}
 <section id="topbar" class="d-none d-lg-block">
   <div class="container clearfix">
     <div class="contact-info float-left">
-      <i class="fa fa-envelope-o"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-      <i class="fa fa-phone"></i> +90 553 898 34 31
+      <i class="fa fa-envelope-o"></i> <a href="{% ayar 'POSTA'%}">{% ayar 'POSTA'%}</a>
+      <i class="fa fa-phone"></i> {% ayar 'TEL'%}
     </div>
     <ul class="social-links nav">{% if not request.user.is_authenticated %}
       <li><a href="#" class="twitter"><i class="fa fa-user-plus"></i> Üye Ol</a></li>
