@@ -1,3 +1,5 @@
+from django.utils.text import slugify
+from django.dispatch import receiver
 from django.db import models
 
 class ulkeler(models.Model):
@@ -198,3 +200,9 @@ class sponsorlar(models.Model):
         verbose_name_plural = 'Sponsorlar'
     def __str__(self):
         return self.sponsor
+
+@receiver(models.signals.pre_delete, sender=sponsorlar)
+def auto_delet_file_on_delete(sender, instance, **kwargs):
+    if instance.logo:
+        if os.path.isfile(instance.logo.path):
+            os.remove(instance.logo.path)

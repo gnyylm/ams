@@ -1,8 +1,11 @@
 import uuid
 import os
 from django.db import models
+from django.utils.text import slugify
+from django.dispatch import receiver
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
+import shutil
 
 def get_file_path(instance, filename):
     ext = filename.split('.')[-1]
@@ -23,3 +26,13 @@ class galeri(models.Model):
 
     def __str__(self):
         return '%s' % self.title
+
+
+@receiver(models.signals.pre_delete, sender=galeri)
+def auto_delet_file_on_delete(sender, instance, **kwargs):
+    if instance.image:
+        if os.path.isfile(instance.image.path):
+            os.remove(instance.image.path)
+    if instance.image_thumbnail:
+        if os.path.isfile(instance.image_thumbnail.path):
+            shutil.rmtree(os.path.dirname(instance.image_thumbnail.path))
